@@ -29,6 +29,7 @@ public:
 		if (node != NULL) {
 			printf("    >> ");
 			node->display();
+			node->increaseSearchCount();		// 검색 횟수 증가
 		}
 		else
 			printf("    >> 등록되지 않은 의미: %s\n", m);
@@ -87,6 +88,7 @@ public:
 
 		if (node->getWord()[0] == ch)
 			node->display();
+			node->increaseSearchCount();		// 검색 횟수 증가
 
 		printWordsStartingWith(node->getRight(), ch);
 	}
